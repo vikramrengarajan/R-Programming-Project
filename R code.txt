@@ -1,0 +1,62 @@
+
+R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+
+
+> n<- 10
+> ma<-10
+> na<-9
+> ls(pat="a")
+[1] "ma"     "mydata" "na"    
+> ls(pat="^n")
+[1] "n"  "na"
+> getwd()
+[1] "F:/R Workspace"
+> mydata<-read.table("data_cop.txt")
+
+> getwd()
+[1] "C:/Users/Rengarajan/Documents"
+
+> setwd("F:/R Workspace")
+
+> mydata<-read.table("data_cop.txt")
+
+> ls(mydata)
+[1] "V1" "V2" "V3" "V4" "V5" "V6" "V7"
+> mydata<-read.fwf("data_cop.txt",widths=c(1,4,6,6))
+> mydata
+  V1   V2     V3 V4   V5
+1  4 34-2 00-295  6 Skyl
+2  8 00-2 30-839  3 Elen
+3  9 03-1 20-333  9 Debr
+4  9 99-0 00-393  9 Walt
+5  9 99-0 12-393  4 Dext
+
+>  austpop<- read.table("F:/R Workspace/data_cop.txt", header=FALSE)
+> names(austpop)
+[1] "V1" "V2" "V3" "V4" "V5" "V6" "V7"
+> austpop
+            V1     V2 V3      V4     V5                      V6         V7
+1 434-200-2956 Skyler  H   White Female  skyler.white@gmail.com 1968-01-12
+2 800-230-8393  Elena  M Gilbert Female elena.gitbert@gmail.com 1987-01-12
+3 903-120-3339  Debra  J  Morgan Female  debra.morgan@gmail.com 1983-02-03
+4 999-000-3939 Walter  H   White   Male  walter.white@gmail.com 1963-05-03
+5 999-012-3934 Dexter  J  Morgan   Male dexter.morgan@gmail.com 1978-08-01
+> plot(V2~V7,data=austpop,pch=16)
+> mydata<-read.table("data_univ.txt")
